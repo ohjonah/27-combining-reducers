@@ -5,7 +5,17 @@ export const expenseCreate = (expense) => {
   expense.timestamp = new Date();
 
   return {
-    type: 'expenseCreate',
+    type: 'EXPENSE_CREATE',
     payload: expense
   }
 }
+
+export const expenseUpdate = (expense) => ({
+  type: 'EXPENSE_UPDATE',
+  payload: expense
+})
+
+export const expenseDelete = (expense) => ({
+  type: 'EXPENSE_UPDATE',
+  payload: expense
+})
