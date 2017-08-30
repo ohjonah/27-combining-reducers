@@ -8,6 +8,7 @@ import {
 } from '../../action/category-actions.js';
 
 import CategoryForm from '../category-form';
+import ExpenseForm from '../expense-form';
 
 class DashboardContainer extends React.Component {
   render() {
@@ -29,6 +30,10 @@ class DashboardContainer extends React.Component {
                 onComplete={this.props.categoryUpdate} />
 
               <button onClick={() => this.props.categoryDelete(item)}>X</button>
+
+              <ExpenseForm
+                buttonText='update'
+                onComplete={this.props.expenseUpdate} />
             </div>
           )}
       </main>
