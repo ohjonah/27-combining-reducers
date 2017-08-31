@@ -1,10 +1,13 @@
 import React from 'react';
-import {Provider} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
-import createAppStore from '../../lib/store.js';
-import DashboardContainer from '../dashboard-container';
 
-const store = createAppStore();
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+
+import DashboardContainer from '../dashboard-container';
+import reducer from '../../reducer';
+
+const store = createStore(reducer);
 
 class App extends React.Component {
 

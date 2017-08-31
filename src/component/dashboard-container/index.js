@@ -1,11 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {categoryCreate as categoryActionCreate} from '../../action/category-actions.js';
+import {categoryCreate as actionCategoryCreate} from '../../action/category-actions.js';
 
 import CategoryForm from '../category-form';
 import CategoryItem from '../category-item';
-import ExpenseForm from '../expense-form';
 
 class DashboardContainer extends React.Component {
   render() {
@@ -34,7 +33,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, getState) => {
   return {
-    categoryCreate: (category) => dispatch(categoryActionCreate(category)),
+    categoryCreate: (category) => dispatch(actionCategoryCreate(category)),
   }
 }
 

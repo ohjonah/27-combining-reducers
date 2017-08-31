@@ -1,21 +1,16 @@
 import uuid from 'uuid/v1';
 
-export const expenseCreate = (expense) => {
-  expense.id = uuid();
-  expense.timestamp = new Date();
-
-  return {
+export const expenseCreate = (expense) => ({
     type: 'EXPENSE_CREATE',
-    payload: expense
-  }
-}
+    payload: {...expense, id: uuid()},
+})
 
 export const expenseUpdate = (expense) => ({
   type: 'EXPENSE_UPDATE',
-  payload: expense
+  payload: {...expense}
 })
 
 export const expenseDelete = (expense) => ({
-  type: 'EXPENSE_UPDATE',
-  payload: expense
+  type: 'EXPENSE_DELETE',
+  payload: {...expense}
 })
