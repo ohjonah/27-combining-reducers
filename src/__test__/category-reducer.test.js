@@ -6,7 +6,7 @@ describe('Category Reducer', () => {
     expect(result).toEqual([]);
   });
 
-  test('if no action type is presented, the state should be returned', () => {
+  test('if action type is not present, return state', () => {
     let state = [
       { id: 'someid', title: 'some title' },
       { id: 'anotherid', title: 'another title' }
