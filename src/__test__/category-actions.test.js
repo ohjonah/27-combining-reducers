@@ -1,4 +1,4 @@
-import {categoryCreate, categoryUpdate, categoryDelete} from '../action/category-actions.js';
+import {categoryCreate, categoryUpdate, categoryDelete, categoryReset} from '../action/category-actions.js';
 
 describe('Category Actions', () => {
   let testCategory = {
@@ -33,6 +33,13 @@ describe('Category Actions', () => {
     expect(action).toEqual({
       type: 'CATEGORY_UPDATE',
       payload: testCategory
+    });
+  });
+
+  test('categoryReset returns a CATEGORY_RESET action', () => {
+    let action = categoryReset(testCategory);
+    expect(action).toEqual({
+      type: 'CATEGORY_RESET'
     });
   });
 });

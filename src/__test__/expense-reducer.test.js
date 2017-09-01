@@ -1,27 +1,29 @@
 import expenseReducer from '../reducer/expense-reducer.js';
 
+let testExpenseOne = {
+  id: '000001',
+  name: 'test expense one',
+  categoryID: 'someTestId',
+  price: 100
+};
+
+let testExpenseTwo = {
+  id: '000002',
+  name: 'test expense two',
+  categoryID: 'someTestId',
+  price: 50
+};
+
+let updatedExpenseOne = {
+  id: '000001',
+  name: 'updated expense one',
+  categoryID: 'someTestId',
+  price: 75
+};
+
+let testExpenseState = { someTestId: [testExpenseOne, testExpenseTwo] };
+
 describe('Expense Reducer', () => {
-  let testExpenseOne = {
-    id: '000001',
-    name: 'test expense one',
-    categoryID: 'someTestId',
-    price: 100
-  };
-
-  let testExpenseTwo = {
-    id: '000002',
-    name: 'test expense two',
-    categoryID: 'someTestId',
-    price: 50
-  };
-
-  let updatedExpenseOne = {
-    id: '000001',
-    name: 'updated expense one',
-    categoryID: 'someTestId',
-    price: 75
-  };
-
   test('initial state should be an empty object', () => {
     let result = expenseReducer(undefined, { type: null });
 
@@ -48,20 +50,18 @@ describe('Expense Reducer', () => {
   });
 
   test('EXPENSE_UPDATE should return new state with modified Expense Object', () => {
-    let testState = { someTestId: [testExpenseOne, testExpenseTwo] };
     let action = {
       type: 'EXPENSE_UPDATE',
       payload: updatedExpenseOne
     };
-    let result = expenseReducer(testState, action);
+    let result = expenseReducer(testExpenseState, action);
 
     expect(result.someTestId.length).toBe(2);
     expect(result.someTestId[0].name).toEqual(updatedExpenseOne.name);
     expect(result.someTestId[0].price).toEqual(updatedExpenseOne.price);
   });
 
-  test('EXPENSE_DELETE return new state with deleted Expense Object', () => {
-    let testState = { someTestId: [testExpenseOne, testExpenseTwo] };
+  test('EXPENSE_DELETE return new state and filter out Expense Object', () => {
     let resultTestState = { someTestId: [testExpenseOne] };
 
     let action = {
