@@ -1,3 +1,42 @@
 body {
-  background: orange;
+  background: $tertiary;
+}
+
+h1 {
+  margin: $gutter-sm;
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+button {
+  padding: $gutter-sm $gutter-lg;
+  margin: .5% 0;
+  border: none;
+  color: $white;
+  background: $black;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 2vw;
+
+  &:hover {
+  background: $btn-primary;
+  }
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  margin: .5% 0;
+  padding: $gutter-sm $gutter-lg;
+  border-radius: $border-radius;
+  border: none;
+}
+
+input[type="number"] {
+  box-sizing: border-box;
+  width: 100%;
+  margin: .5% 0;
+  padding: $gutter-sm $gutter-lg;
+  border-radius: $border-radius;
+  border: none;
 }
