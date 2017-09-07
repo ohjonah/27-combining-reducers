@@ -19,6 +19,7 @@ class DashboardContainer extends React.Component {
         {this.props.categories.map((item) =>
           <CategoryItem key={item.id} category={item} />
         )}
+        <div className='clearfix'></div>
       </main>
     )
   }

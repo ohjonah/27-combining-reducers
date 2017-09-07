@@ -10,9 +10,9 @@ class ExpenseItem extends React.Component {
 
     return (
       <li className='expense-item'>
-        <p>{expense.name}</p>
-        <p>{expense.price}</p>
-        <button onClick={() => expenseDelete(expense)}>x</button>
+        <h3>{expense.name}</h3>
+        <h3>{expense.price}</h3>
+        <button className='remove' onClick={() => expenseDelete(expense)}>delete</button>
         <ExpenseForm
           expense={expense}
           buttonText='update expense'

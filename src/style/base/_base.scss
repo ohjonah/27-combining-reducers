@@ -8,6 +8,22 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  margin: 0 $gutter-sm 0 $gutter-sm;
+  padding: $gutter-sm 0;
+  font-size: 4vw;
+  font-weight: bold;
+  display: inline;
+
+  &.category {
+    float: left;
+  }
+
+  &.budget {
+    float: right;
+  }
+}
+
 button {
   padding: $gutter-sm $gutter-lg;
   margin: .5% 0;
@@ -19,7 +35,21 @@ button {
   font-size: 2vw;
 
   &:hover {
-  background: $btn-primary;
+    background: $btn-primary;
+  }
+
+  &.update {
+    margin: 0 1%;
+    float: right;
+  }
+
+  &.remove {
+    margin: 0 1%;
+    float: right;
+
+    &:hover {
+      background: red;
+    }
   }
 }
 
@@ -39,4 +69,11 @@ input[type="number"] {
   padding: $gutter-sm $gutter-lg;
   border-radius: $border-radius;
   border: none;
+}
+
+.clearfix:after {
+ visibility: hidden;
+ display: block;
+ height: 0;
+ clear: both;
 }

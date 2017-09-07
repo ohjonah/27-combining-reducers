@@ -1,3 +1,5 @@
+import './_category-item.scss'
+
 import React from 'react';
 import {connect} from 'react-redux';
 
@@ -15,13 +17,13 @@ class CategoryItem extends React.Component {
     return (
       <section className='category-item'>
         <div className='category-container'>
-          <button onClick={() => this.props.categoryDelete(category)}>X</button>
-          <h2>{category.name}</h2>
-          <h2>{category.budget}</h2>
+          <h2 className='category'>Category: {category.name}</h2>
+          <h2 className='budget'>Budget Available: ${category.budget}</h2>
           <CategoryForm
             buttonText='update'
             category={category}
             onComplete={categoryUpdate} />
+          <button className='remove' onClick={() => this.props.categoryDelete(category)}>delete</button>
         </div>
 
         <div className='expense-container'>
