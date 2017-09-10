@@ -1,0 +1,21 @@
+@import '../../style/lib/vars';
+
+.expense-item {
+  background: blue;
+  margin: 4.5% 0 0 4.5%;
+  border: 5px solid black;
+  padding: 1.5%;
+
+  h3 {
+    margin: 0 $gutter-sm 0 $gutter-sm;
+    padding-left: $gutter-sm;
+    display: inline;
+    font-size: 2vw;
+    font-weight: bold;
+    color: white;
+  }
+
+  button {
+    float: right;
+  }
+}

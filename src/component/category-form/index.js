@@ -33,6 +33,8 @@ class CategoryForm extends React.Component {
   }
 
   render() {
+    let buttonClass = (this.props.buttonText === 'update') ? 'update' : 'create';
+
     return (
       <form className='category-form' onSubmit={this.handleSubmit}>
         <input
@@ -51,7 +53,8 @@ class CategoryForm extends React.Component {
           onChange={this.handleBudgetChange}
           />
 
-        <button className='update' type='submit'>{this.props.buttonText}</button>
+        <button type='submit' className={buttonClass}>{this.props.buttonText}</button>
+        <div className='clearfix'></div>
       </form>
     )
   }

@@ -11,23 +11,17 @@ h1 {
 h2 {
   margin: 0 $gutter-sm 0 $gutter-sm;
   padding: $gutter-sm 0;
+  display: inline;
   font-size: 4vw;
   font-weight: bold;
-  display: inline;
-
-  &.category {
-    float: left;
-  }
-
-  &.budget {
-    float: right;
-  }
+  color: white;
 }
 
 button {
-  padding: $gutter-sm $gutter-lg;
+  padding: 1% 2%;
   margin: .5% 0;
   border: none;
+  float: right;
   color: $white;
   background: $black;
   border-radius: $border-radius;
@@ -38,14 +32,16 @@ button {
     background: $btn-primary;
   }
 
+  &.create {
+    margin-bottom: $gutter-sm;
+  }
+
   &.update {
-    margin: 0 1%;
-    float: right;
+    margin-bottom: $gutter-sm;
   }
 
   &.remove {
     margin: 0 1%;
-    float: right;
 
     &:hover {
       background: red;
@@ -71,7 +67,15 @@ input[type="number"] {
   border: none;
 }
 
-.clearfix:after {
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.clearfix {
  visibility: hidden;
  display: block;
  height: 0;

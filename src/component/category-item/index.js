@@ -17,16 +17,19 @@ class CategoryItem extends React.Component {
     return (
       <section className='category-item'>
         <div className='category-container'>
-          <h2 className='category'>Category: {category.name}</h2>
-          <h2 className='budget'>Budget Available: ${category.budget}</h2>
+          <h2 className='left'>Category: {category.name}</h2>
+          <button className='remove' onClick={() => this.props.categoryDelete(category)}>X</button>
+          <h2 className='right'>Budget: ${category.budget}</h2>
           <CategoryForm
             buttonText='update'
             category={category}
             onComplete={categoryUpdate} />
-          <button className='remove' onClick={() => this.props.categoryDelete(category)}>delete</button>
+
+          <div className='clearfix'></div>
         </div>
 
         <div className='expense-container'>
+          <h2>Create Expense</h2>
           <ExpenseForm
             categoryID={category.id}
             buttonText='create expense'

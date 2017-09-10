@@ -1,3 +1,5 @@
+import './_expense-item.scss';
+
 import React from 'react';
 import {connect} from 'react-redux';
 
@@ -10,13 +12,18 @@ class ExpenseItem extends React.Component {
 
     return (
       <li className='expense-item'>
-        <h3>{expense.name}</h3>
-        <h3>{expense.price}</h3>
-        <button className='remove' onClick={() => expenseDelete(expense)}>delete</button>
+        <h3 className='left'>Expense: {expense.name}</h3>
+        <button className='remove' onClick={() => expenseDelete(expense)}>X</button>
+        <h3 className='right'>Price: ${expense.price}</h3>
+
+
         <ExpenseForm
           expense={expense}
           buttonText='update expense'
           onComplete={expenseUpdate} />
+
+
+        <div className='clearfix'></div>
       </li>
     )
   }
